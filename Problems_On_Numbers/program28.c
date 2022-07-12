@@ -1,0 +1,59 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Header.h
+// Accept no.from user & display factors of that number.
+// Input:   9
+// Output: 1  3
+
+//    To Compile :- gcc Main.c Helper.c -o Myexe
+//    To Run     :- Myexe(windows)
+
+
+#include<stdio.h>
+void DisplayFactors(int);          // Declaration
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Helper.c
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//	Function Name :-   Displayfactors
+//  Input         :-   10(Integer)
+//  Output        :-   1 2 5(Integer)	
+//  Description   :-   It is used to find the factors of the given number.
+//  Author        :-   Manish Bhupendra Patil.
+//  Date 		  :-   1/07/2022	
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void DisplayFactors(int iNo)              // Defination
+{
+	int iCnt = 0;
+	if(iNo < 0)
+	{
+       iNo = -iNo;
+	}	   
+	
+	for(iCnt = 1;iCnt < iNo; iCnt++)
+	{
+		if((iNo % iCnt)==0)
+		{	
+		   printf("%d\n",iCnt);
+		}
+	}		
+}	
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Main.c
+int main()
+{
+	int iValue = 0;
+
+	printf("Enter number :\n");
+	scanf("%d",&iValue);
+	
+	DisplayFactors(iValue);        //DisplayFactor(-8);
+	
+	return 0;
+}
+	
+//Time Complexity : O(N)
