@@ -1,0 +1,49 @@
+// Template
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct node
+{
+	int Data;
+	struct node *node;
+}NODE,*PNODE, **PPNODE;
+
+
+void InsertFirst(PPNODE Head,int no)
+{
+	PNODE newn = NULL;
+	newn = (PNODE)malloc(sizeof(NODE));
+	newn->data = no;
+	newn->next = NULL;
+	
+	if(*Head != NULL)
+	{
+		newn->next = *Head;
+	}
+	*Head = newn;
+}
+
+void Display(PPNODE Head)
+{
+	printf("elements of linked list are :\n");
+	while(Haed != NULL)
+	{
+		printf("|%d|->",Head->data);
+		Head = Head->next;
+	}
+	printf("\n");
+}
+int main()
+{
+	PNODE First = NULL;
+	
+	InsertFirst(&First,50);
+	InsertFirst(&First,40);
+	InsertFirst(&First,30);
+	InsertFirst(&First,20);
+	InsertFirst(&First,10);
+	
+	Display(First);
+	
+	return 0;
+}
